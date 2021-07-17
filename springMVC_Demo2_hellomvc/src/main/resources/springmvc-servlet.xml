@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+    <!--我们实际要做到的就是Controller层去调业务层，设置视图返回的名字-->
+    <!--1.DispatcherServlet调用HandlerMapping根据URL查找Handler,Handler根据URL找到控制器，将解析后的信息返回给DispatcherServlet-->
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"></bean>
+    <!--2.HandlerAdapter表示处理器适配器，适配到对应的Controller类，让Controller执行,Controller将具体的信息返回给Adapter,Adapter将视图或模型传递给DispatcherServlet-->
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"></bean>
+    <!--3.视图解析器，获取了ModelAndView的数据，解析ModelAndView中的视图名字，拼接对应的视图名字找到对应的视图，将数据渲染到视图上-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="internalResourceViewResolver">
+        <!--前缀-->
+        <property name="prefix" value="/WEB-INF/jsp/"></property>
+        <!--后缀-->
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+    <!--handler-->
+    <bean id="/hello" class="com.ccunix.controller.HelloController"></bean>
+</beans>

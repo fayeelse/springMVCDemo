@@ -1,0 +1,12 @@
+# Project exclude paths
+/out/
+/springMVC2/target/
+/springMVC_Demo1_servlet/target/
+/springMVC_Demo2_hellomvc/target/
+/springMVC_Demo3_hellomvc2/target/
+/springMVC_Demo4_annotation/target/
+/springMVC_Demo5_controller/target/
+/springMVC_Demo6_requestMapping/target/
+/springMVC_Demo7_json/target/
+/springMVC_Demo8_ajax/target/
+/springMVC_Demo9_interceptor/target/
